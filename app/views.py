@@ -15,4 +15,5 @@ def index():
 		"author": "Msdhu",
 		"title": "第二篇文章"
 	}]
+	
 	return render_template("index.html", user = user, articals = articals)
