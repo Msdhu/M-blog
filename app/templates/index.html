@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+	<ul>
+	{% for artical in articals %}
+		<li>
+			<h2>{{artical.title}} -- {{artical.author}}</h2>
+		</li>
+	{% endfor %}
+	</ul>
+{% endblock %}

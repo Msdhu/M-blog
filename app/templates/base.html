@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>M-blog</title>
+</head>
+<body>
+	<div>M-blog: <a href="/index" target="_self">Home</a></div>
+	{% if user.isAdmin %}
+		<h1>Hello, {{user.name}}Hello, Flask</h1>
+	{% else %}
+		<h1>Hello, Flask</h1>
+	{% endif %}
+
+	{% block content %}{% endblock %}
+</body>
+</html>
