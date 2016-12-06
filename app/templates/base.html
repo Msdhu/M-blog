@@ -5,12 +5,13 @@
 	<title>M-blog</title>
 </head>
 <body>
-	<div>M-blog: <a href="/index" target="_self">Home</a></div>
-	{% if user.isAdmin %}
-		<h1>Hello, {{user.name}}Hello, Flask</h1>
-	{% else %}
-		<h1>Hello, Flask</h1>
-	{% endif %}
+	<div>
+		M-blog: <a href="{{ url_for('index') }}" target="_self">Home</a>
+		{% if g.user.is_authenticated %}
+			| <a href="{{ url_for('user', nickname = g.user.nickname) }}">Your Profile</a>
+			| <a href="{{ url_for('logout') }}" target="_self">Logout</a>
+		{% endif %}
+	</div>
 	
 	{% with messages = get_flashed_messages() %}
 		{% if messages %}
