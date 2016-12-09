@@ -1,11 +1,5 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<ul>
-	{% for post in posts %}
-		<li>
-			<h2>{{post.body}} -- {{post.author.nickname}}</h2>
-		</li>
-	{% endfor %}
-	</ul>
+	{% include "post.html" %}
 {% endblock %}

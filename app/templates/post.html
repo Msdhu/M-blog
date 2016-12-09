@@ -1,0 +1,7 @@
+<ul>
+	{% for post in posts %}
+		<li>
+			<h2><img src="{{post.author.avatar(50)}}" />{{post.body}} -- {{post.author.nickname}}</h2>
+		</li>
+	{% endfor %}
+</ul>

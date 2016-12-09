@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<h2>User: {{user.nickname}}</h2>
-	<ul>
-	{% for post in posts %}
-		<li>
-			<h2>{{post.body}} -- {{post.author.nickname}}</h2>
-		</li>
-	{% endfor %}
-	</ul>
+	<div style="overflow: hidden;margin-top:20px;">
+		<div style="float:left;margin-right:10px;">
+			<img src="{{user.avatar(128)}}" />
+		</div>
+		<div style="overflow: hidden;">
+			<span>User: {{user.nickname}}</span>
+			{% if user.about_me %}<p>{{user.about_me}}</p>{% endif %}
+			{% if user.last_seen %}<p>Last seen on: {{user.last_seen}}</p>{% endif %}
+			{% if user.id == g.user.id %}<p><a href="{{url_for('edit')}}">Edit</a></p>{% endif %}
+		</div>
+	</div>
+	{% include "post.html" %}
 {% endblock %}
