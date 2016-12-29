@@ -14,12 +14,3 @@ SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(basedir, "app.db")
 
 # SQLALCHEMY_MIGRATE_REPO 是文件夹,我们将会把 SQLAlchemy-migrate 数据文件存储在这里
 SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, "db_repository")
-
-# mail server settings
-MAIL_SERVER = 'localhost'
-MAIL_PORT = 25
-MAIL_USERNAME = None
-MAIL_PASSWORD = None
-
-# administrator list
-ADMINS = ['liangqi.miao@qunar.com']
